@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class ValidateEnableOrDisable {
+public class E2ESpiceJetSearch {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
@@ -18,6 +18,7 @@ public class ValidateEnableOrDisable {
 		String SelectCity = "Dubai, Al Maktoum International";
 		String ToEnteredCity = "Mumbai";
 		String ToSelectedCity = "Mumbai";
+		String UserCurrency = "HKD";
 		String Roomcount = "2";
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
@@ -72,8 +73,28 @@ public class ValidateEnableOrDisable {
 		driver.findElement(By.cssSelector("div[data-testid='home-page-travellers']")).click();
 		WebElement AdultCount = driver.findElement(By.cssSelector(
 				"div[class='css-1dbjc4n r-1awozwy r-18u37iz'] div[data-testid='Adult-testID-plus-one-cta']"));
-		AdultCount.click();
+
+		int i1 = 1;
+		while (i1 < 5) {
+			AdultCount.click();
+			i1++;
+		}
+
 		driver.findElement(By.cssSelector("div[data-testid='home-page-travellers-done-cta']")).click();
-		driver.findElement(By.cssSelector("div[class='css-1dbjc4n r-1awozwy r-18u37iz r-1wtj0ep	']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By
+				.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/div[5]/div[2]/div[1]/div[2]/div[1]"))
+				.click();
+		List<WebElement> Currency = driver.findElements(By.cssSelector("div[class='css-76zvg2 r-homxoj r-ubezar']"));
+
+		for (int i = 0; i < Currency.size(); i++) {
+			String SelectCurrency = Currency.get(i).getText();
+//			System.out.println(SelectCurrency);
+			if (SelectCurrency.contains(UserCurrency)) {
+				Currency.get(i).click();
+				break;
+			}
+		}
+		driver.findElement(By.cssSelector("div[data-testid='home-page-flight-cta']")).click();
 	}
 }
