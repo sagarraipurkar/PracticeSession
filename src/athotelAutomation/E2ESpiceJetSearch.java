@@ -66,9 +66,12 @@ public class E2ESpiceJetSearch {
 			}
 		}
 		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"//div[@class='css-1dbjc4n r-150rngu r-18u37iz r-16y2uox r-1wbh5a2 r-lltvgl r-buy8e9 r-1sncvnh']//div[2]//div[1]//div[3]//div[2]//div[3]//div[1]//div[1]"))
+		driver.findElement(By.cssSelector(
+				"div[class='css-1dbjc4n r-1awozwy r-19m6qjp r-156aje7 r-y47klf r-1phboty r-1d6rzhh r-1pi2tsx r-1777fci r-13qz1uu']"))
 				.click();
+//		driver.findElement(By.xpath(
+//				"//div[@class='css-1dbjc4n r-150rngu r-18u37iz r-16y2uox r-1wbh5a2 r-lltvgl r-buy8e9 r-1sncvnh']//div[2]//div[1]//div[3]//div[2]//div[3]//div[1]//div[1]"))
+//				.click();
 		Thread.sleep(2000);
 		driver.findElement(By.cssSelector("div[data-testid='home-page-travellers']")).click();
 		WebElement AdultCount = driver.findElement(By.cssSelector(
