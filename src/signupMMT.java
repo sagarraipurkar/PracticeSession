@@ -19,7 +19,7 @@ public class signupMMT {
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		String Password = "Sagar@91";
-		String CPassword = "sagar@91";
+		String CPassword = "Sagar@91";
 		String regex = "(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\\n])(?=.*[A-Z])(?=.*[a-z]).*$\"";
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("disable-notifications");
@@ -81,8 +81,9 @@ public class signupMMT {
 
 		driver.findElement(By.cssSelector("div[class='react-datepicker__day react-datepicker__day--002']")).click();
 		driver.findElement(By.cssSelector("input[placeholder='+91 01234 56789']")).sendKeys("8871488970");
+//		driver.findElement(By.cssSelector("input[id='email_id']")).clear();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//input[@id='email_id']")).sendKeys("sagar@mailinator.com");
+		driver.findElement(By.cssSelector("input[id='email_id']")).sendKeys("sagar@mailinator.com");
 ////		
 //		List<WebElement> CountryList = driver.findElements(By.cssSelector("li[class='country']"));
 //		for (int i = 0; i < CountryList.size(); i++) {
@@ -110,5 +111,8 @@ public class signupMMT {
 					"/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[5]/div[1]/div[3]/div[1]/div[1]"))
 					.getText());
 		}
+//		WebElement Checkbox = driver.findElement(By.cssSelector("label[class='form-check-label font-14']"));
+//				Checkbox.click();
+		driver.quit();
 	}
 }
