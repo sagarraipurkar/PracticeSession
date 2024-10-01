@@ -39,6 +39,7 @@ public class Autosuggestion {
 			if (text.contains(FromDestinationName)) {
 				FromListofAutosuggestion.get(i).click();
 				System.out.println("From Desination Successfully Selected");
+				System.out.println("From Desination Successfully Selected");
 				break;
 			}
 		}
