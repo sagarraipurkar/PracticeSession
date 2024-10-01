@@ -40,6 +40,7 @@ public class Autosuggestion {
 				FromListofAutosuggestion.get(i).click();
 				System.out.println("From Desination Successfully Selected");
 				System.out.println("From Desination Successfully Selected");
+				System.out.println("From Desination Successfully Selected");
 				break;
 			}
 		}
