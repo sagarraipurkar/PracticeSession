@@ -27,7 +27,7 @@ public class Signup {
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		String Trips = "My Trips";
-		String Email = "Sagar.raipurkar007@techspian.com";
+		String Email = "Sagar.raipurkar@techspian.com";
 		String singupin = "Sign in";
 		WebDriverManager.chromedriver().browserVersion("129.0.6668.59").setup();
 		WebDriver driver = new ChromeDriver();
