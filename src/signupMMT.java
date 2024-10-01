@@ -111,8 +111,9 @@ public class signupMMT {
 					"/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[5]/div[1]/div[3]/div[1]/div[1]"))
 					.getText());
 		}
-//		WebElement Checkbox = driver.findElement(By.cssSelector("label[class='form-check-label font-14']"));
-//				Checkbox.click();
-		driver.quit();
+		Thread.sleep(3000);
+		WebElement Checkbox = driver.findElement(By.cssSelector("input[class='form-check-input mt-02']"));
+		Checkbox.click();
+	driver.quit();
 	}
 }
