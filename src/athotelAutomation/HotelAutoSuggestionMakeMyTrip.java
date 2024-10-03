@@ -8,7 +8,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -64,8 +67,10 @@ public class HotelAutoSuggestionMakeMyTrip {
 
 		}
 		driver.findElement(By.cssSelector("button[data-cy='RoomsGuestsNew_327']")).click();
-		Thread.sleep(2000);
 		driver.findElement(By.id("hsw_search_button")).click();
-		driver.quit();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(@class,'mapEntry__button')]")));
+		driver.findElement(By.xpath("//button[contains(@class,'mapEntry__button')]")).click();
+//		driver.quit();
 	}
 }

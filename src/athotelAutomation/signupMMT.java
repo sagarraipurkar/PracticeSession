@@ -1,8 +1,10 @@
 package athotelAutomation;
+
 import java.time.Duration;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import javax.swing.plaf.synth.SynthOptionPaneUI;
 
@@ -32,7 +34,6 @@ public class signupMMT {
 		System.out.println(driver.getTitle());
 		System.out.println(driver.getCurrentUrl());
 		driver.findElement(By.cssSelector("div[class='css-1dbjc4n r-1jkjb'] a[rel='noopener noreferrer']")).click();
-		Thread.sleep(3000);
 		Set<String> Windowhandle = driver.getWindowHandles();
 		System.out.println(Windowhandle);
 
@@ -42,7 +43,6 @@ public class signupMMT {
 
 		driver.switchTo().window(childwindow);
 		System.out.println("New window");
-		Thread.sleep(2000);
 		driver.findElement(By.cssSelector("div[class='col-sm-4 mt-2 px-sm-4']")).click();
 		WebElement titledropdown = driver
 				.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/div[2]/div/div[1]/div[1]/div[2]/select"));
@@ -50,10 +50,8 @@ public class signupMMT {
 		title.selectByVisibleText("Mr");
 		driver.findElement(By.id("first_name")).sendKeys("John");
 		driver.findElement(By.id("last_name")).sendKeys("Deo");
-		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/div[2]/div/div[1]/div[3]/div[1]/select"))
 				.click();
-		Thread.sleep(2000);
 		driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/div/div[2]/div[2]/div/div[1]/div[3]/div[1]/select"))
 				.sendKeys("Barbados");
 //		List<WebElement> CountryList = driver.findElements(
@@ -83,7 +81,6 @@ public class signupMMT {
 		driver.findElement(By.cssSelector("div[class='react-datepicker__day react-datepicker__day--002']")).click();
 		driver.findElement(By.cssSelector("input[placeholder='+91 01234 56789']")).sendKeys("8871488970");
 //		driver.findElement(By.cssSelector("input[id='email_id']")).clear();
-		Thread.sleep(2000);
 		driver.findElement(By.cssSelector("input[id='email_id']")).sendKeys("sagar@mailinator.com");
 ////		
 //		List<WebElement> CountryList = driver.findElements(By.cssSelector("li[class='country']"));
@@ -112,9 +109,8 @@ public class signupMMT {
 					"/html[1]/body[1]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[5]/div[1]/div[3]/div[1]/div[1]"))
 					.getText());
 		}
-		Thread.sleep(3000);
 		WebElement Checkbox = driver.findElement(By.cssSelector("input[class='form-check-input mt-02']"));
 		Checkbox.click();
-	driver.quit();
+		driver.quit();
 	}
 }
